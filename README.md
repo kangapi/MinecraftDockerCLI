@@ -1,1 +1,1 @@
-go to ()[https://mcli.kangapi.fr/cli.py]
+go to https://mcli.kangapi.fr/cli.py
