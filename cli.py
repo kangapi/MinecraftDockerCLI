@@ -121,14 +121,12 @@ def serverWithSameName():
     print()
     print("Another server with the same name already exists")
     print()
-    print("1. Stop the existing server")
+    print("1. Remove the existing server and create a new one")
     print()
-    print("2. Remove the existing server")
-    print()
-    print("3. Create a new server with another name and another port")
+    print("2. Create a new server with another name and another port")
     print()
     print()
-    seventh = input("  Please enter the number[1-2-3]: ")
+    seventh = input("  Please enter the number[1-2]: ")
     print()
 
     return seventh
@@ -136,17 +134,15 @@ def serverWithSameName():
 
 serverWithSameNameChoice = serverWithSameName()
 
-while serverWithSameNameChoice != "1" and serverWithSameNameChoice != "2" and serverWithSameNameChoice != "3":
-    print("  Please enter the number[1-2-3]")
+while serverWithSameNameChoice != "1" and serverWithSameNameChoice != "2":
+    print("  Please enter the number[1-2]")
     print()
     serverWithSameNameChoice = serverWithSameName()
 
 if serverWithSameNameChoice == "1":
     os.system("docker container stop " + serverName)
-if serverWithSameNameChoice == "2":
-    os.system("docker container stop " + serverName)
     os.system("docker container rm " + serverName)
-if serverWithSameNameChoice == "3":
+if serverWithSameNameChoice == "2":
     serverName = serverName + "-2"
     serverPathChoice = serverPathChoice + "-2"
     serverPortChoice = str(int(serverPortChoice) + 1)
